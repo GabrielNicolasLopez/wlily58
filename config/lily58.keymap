@@ -73,15 +73,13 @@
                         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
+    };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
 
-        layer_4 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
-            >;
+        extra_layer {
+            if-layers = <lower_layer raise_layer>;
+            then-layer = <layer_3>;
         };
     };
 };
